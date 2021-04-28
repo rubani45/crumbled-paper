@@ -8,7 +8,7 @@ class Paper {
             friction : 0
 		}
 		
-		this.body=Bodies.circle( x, y, 100 , options);
+		this.body=Bodies.circle( x, y, 25 , options);
 		this.image = loadImage("paper.png");
 		this.x = x;
 		this.y =y;
@@ -24,7 +24,8 @@ class Paper {
       strokeWeight(4);
       stroke("green");
       fill(255);
-      image(this.image, 0, 0, 120, 120);
+      imageMode(CENTER);
+      image(this.image, 0, 0, 70, 70);
       pop();
     }
 }

@@ -20,7 +20,13 @@ function setup() {
 	dustbinObj=new dustbin(1200,650);
 	paperObject = new Paper(200,300);
 	Engine.run(engine);
-  
+
+	var render = Render.create({ 
+		element: document.body, 
+		engine: engine, 
+		options: { width: 1600, height: 700, wireframes: false }
+	 });
+	 Render.run(render);
 }
 
 
@@ -28,17 +34,15 @@ function draw() {
   rectMode(CENTER);
   background(230);
  
-
   groundObject.display();
   dustbinObj.display();
   paperObject.display();
-  keyPressed();
 
 }
 function keyPressed(){
 
  if(keyCode === UP_ARROW){
-   Matter.Body.applyForce(paperObject.Body,paperObject.Body.Position,{x:130,y:-145});
+   Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:130,y:-145});
  }
 
 }
